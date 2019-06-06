@@ -3,8 +3,8 @@ Easily retrieve the checkcommand executed by Nagios to check a service
 
 ## Install
 Locate the Nagios *html* directory on your server. Under CentOS, the full path is */usr/share/nagios/html*.
-In this folder, edit *index.php* file. 
-Modify block 
+
+In this folder, edit *index.php* file. Modify block :
 ```
 <script LANGUAGE="javascript">
 	var n = Math.round(Math.random() * 10000000000);
