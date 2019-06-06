@@ -14,6 +14,7 @@ Modify block
 ```
 so it looks like this : 
 ```
+<script src="/nagios/nagios_checkcommand.js"></script>
 <script LANGUAGE="javascript">
 	var n = Math.round(Math.random() * 10000000000);
 	document.write("<title>Nagios Core on " + window.location.hostname + "</title>");
@@ -27,6 +28,13 @@ so it looks like this :
 
 In the same folder, copy files **_nagios_checkcommand.js_** and **_get_checkcommand.php_** with rights 644.
 In the subfolder *images*, copy the __*clipboard.png__* file.
+
+## Configuration
+Notice that the scripts think you have a basic Apache configuration, so the Nagios URL is under */nagios* (for exemple : http://myserver/nagios).
+
+You can configure a few constants at the top of **_get_checkcommand.php_** file :
+`USER1` the value should be the same that your nagios conf
+`CACHEFILE` the path to the Nagios cache file as declare in your own *nagios.conf* file.
 
 ## And now, how to get the services checkcommand ?
 Restart your web server (for exemple : systemctl restart httpd)
