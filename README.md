@@ -33,8 +33,8 @@ In the subfolder *images*, copy the **_clipboard.png_** file with also rights 64
 Notice that the scripts think you have a basic Apache configuration, so the Nagios URL is under */nagios* (for example : http://\<myserver\>/nagios).
 
 You can configure a few constants at the top of **_get_checkcommand.php_** file :
-`USER1` the value should be the same that your nagios conf
-`CACHEFILE` the path to the Nagios cache file as declare in your own *nagios.conf* file.
+- `USER1` the value should be the same that your nagios conf
+- `CACHEFILE` the path to the Nagios cache file as declare in your own *nagios.conf* file.
 
 ## And now, how to get the services checkcommand ?
 Restart your web server (for example : systemctl restart httpd)
