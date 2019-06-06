@@ -30,14 +30,14 @@ In the same folder, copy files **_nagios_checkcommand.js_** and **_get_checkcomm
 In the subfolder *images*, copy the **_clipboard.png_** file with also rights 644.
 
 ## Configuration
-Notice that the scripts think you have a basic Apache configuration, so the Nagios URL is under */nagios* (for exemple : http://\<myserver\>/nagios).
+Notice that the scripts think you have a basic Apache configuration, so the Nagios URL is under */nagios* (for example : http://\<myserver\>/nagios).
 
 You can configure a few constants at the top of **_get_checkcommand.php_** file :
 `USER1` the value should be the same that your nagios conf
 `CACHEFILE` the path to the Nagios cache file as declare in your own *nagios.conf* file.
 
 ## And now, how to get the services checkcommand ?
-Restart your web server (for exemple : systemctl restart httpd)
+Restart your web server (for example : systemctl restart httpd)
 Then, in the Nagios Web Console, access the "Services" page and click on a listed service. 
 In the "Service Commands" section, a new entry let you copy the checkcommand by clicking on the link :)
 
