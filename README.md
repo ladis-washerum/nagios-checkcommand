@@ -27,7 +27,7 @@ so it looks like this :
 ```
 
 In the same folder, copy files **_nagios_checkcommand.js_** and **_get_checkcommand.php_** with rights 644.
-In the subfolder *images*, copy the __*clipboard.png__* file with also rights 644.
+In the subfolder *images*, copy the **_clipboard.png_** file with also rights 644.
 
 ## Configuration
 Notice that the scripts think you have a basic Apache configuration, so the Nagios URL is under */nagios* (for exemple : http://myserver/nagios).
