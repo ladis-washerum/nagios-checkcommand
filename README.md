@@ -1,5 +1,5 @@
 # nagios-checkcommand
-Easily retrieve the checkcommand executed by Nagios to check a service
+Easily retrieve in Nagios UI the checkcommand executed to check a service
 
 ## Install
 Locate the Nagios *html* directory on your server. Under CentOS, the full path is */usr/share/nagios/html*.
@@ -15,6 +15,7 @@ In this folder, edit *index.php* file. Modify block :
 so it looks like this : 
 ```
 <script src="/nagios/nagios_checkcommand.js"></script>
+
 <script LANGUAGE="javascript">
 	var n = Math.round(Math.random() * 10000000000);
 	document.write("<title>Nagios Core on " + window.location.hostname + "</title>");
