@@ -37,7 +37,7 @@ function printCheckCommand( debug = 0 ) {
 				var cell1 = row.insertCell(0);
 				var cell2 = row.insertCell(1);
 				cell1.innerHTML = '<img src="/nagios/images/clipboard.png" alt="Copy" title="Copy the Service Checkcommand To Clipboard" border="0">';
-				cell2.innerHTML = '<button id="link_checkcommand" style="background-color: transparent; border: none;text-decoration: none;text-decoration: none; text-align: left; padding: 0; color: #2a46b8; font-family: arial, verdana, serif; font-size: 12px;" onmouseover="this.style.cursor=\'pointer\';this.style.textDecoration=\'underline\';" onmouseleave="this.style.textDecoration=\'none\';">Copy check command</button>';
+				cell2.innerHTML = '<button id="link_checkcommand" style="background-color: transparent; border: none;text-decoration: none;text-decoration: none; text-align: left; padding: 0; color: #2a46b8; font-family: arial, verdana, serif; font-size: 12px;" onmouseover="this.style.cursor=\'pointer\';this.style.textDecoration=\'underline\';" onmouseleave="this.style.textDecoration=\'none\';">Copy check command into clipboard</button>';
 				row.id = 'check_command';
 
 				// Allow to copy the checkcommand to clipboard
