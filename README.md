@@ -1,5 +1,5 @@
 # nagios-checkcommand
-Easily retrieve in Nagios UI the checkcommand executed to check a service
+Easily retrieve in Nagios UI the checkcommand executed to monitor a service
 
 ## Install
 Locate the Nagios *html* directory on your server. Under CentOS, the full path is */usr/share/nagios/html*.
