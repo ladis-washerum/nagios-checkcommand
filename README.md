@@ -49,3 +49,6 @@ Enjoy !
 Simply, to avoid modify a lot of Nagios files and not see our changes erased in case of package update, we just add a few lines in *index.php*.
 
 So it can call a function in **_nagios_checkcommand.js_** which periodically check your current Nagios UI page. If it detects the "Service Information" page, it retrieves the host and the service, then call **_get_checkcommand.php_** to get the checkcommand and insert a link on the page to copy it.
+
+## Compatibility
+Successfuly tested with Nagios 4 and Firefox
