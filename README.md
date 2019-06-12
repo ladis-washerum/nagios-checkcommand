@@ -28,7 +28,7 @@ so it looks like this :
 </script>
 ```
 
-> Ensure _/usr/share/nagios/html/js/jquery-1.7.1.min.js_ exists, or update your jquery version inside _\<script\>_
+> Ensure _/usr/share/nagios/html/js/jquery-1.7.1.min.js_ exists, otherwise update your jquery version inside _\<script\>_
 	
 In the same folder, copy files **_nagios_checkcommand.js_** and **_get_checkcommand.php_** with rights 644.
 In the subfolder *images*, copy the **_clipboard.png_** file with also rights 644.
