@@ -14,6 +14,7 @@ In this folder, edit *index.php* file. Modify block :
 ```
 so it looks like this : 
 ```
+<script type="text/javascript" src="/nagios/js/jquery-1.7.1.min.js"></script>
 <script src="/nagios/nagios_checkcommand.js"></script>
 
 <script LANGUAGE="javascript">
@@ -51,4 +52,4 @@ Simply, to avoid modify a lot of Nagios files and not see our changes erased in 
 So it can call a function in **_nagios_checkcommand.js_** which periodically check your current Nagios UI page. If it detects the "Service Information" page, it retrieves the host and the service, then call **_get_checkcommand.php_** to get the checkcommand and insert a link on the page to copy it.
 
 ## Compatibility
-Successfuly tested with Nagios 4 and Firefox
+Successfuly tested with Nagios 4 and Firefox or Chrome
