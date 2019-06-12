@@ -28,6 +28,8 @@ so it looks like this :
 </script>
 ```
 
+> Ensure _/usr/share/nagios/html/js/jquery-1.7.1.min.js_ exists, or update your jquery version inside _\<script\>_
+	
 In the same folder, copy files **_nagios_checkcommand.js_** and **_get_checkcommand.php_** with rights 644.
 In the subfolder *images*, copy the **_clipboard.png_** file with also rights 644.
 
@@ -44,7 +46,7 @@ Restart your web server (for example with : systemctl restart httpd).
 Then, in the Nagios UI, access the "Services" page and click on a listed service. 
 In the "Service Commands" section, a new entry lets you copy the checkcommand by clicking on the link :)
 
-Enjoy !
+Enjoy !  :smiley:
 
 ## How does it work ? 
 Simply, to avoid modify a lot of Nagios files and not see our changes erased in case of package update, we just add a few lines in *index.php*.
