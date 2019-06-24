@@ -55,3 +55,5 @@ So it can call a function in **_nagios_checkcommand.js_** which periodically che
 
 ## Compatibility
 Successfuly tested with Nagios 4 and Firefox or Chrome
+
+Note that you must not open links in Nagios web page in new tab ; if you do so, those scripts won't be called. 
