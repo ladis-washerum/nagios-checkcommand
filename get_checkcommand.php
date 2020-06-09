@@ -69,8 +69,19 @@
 	fclose($myfile);
 
 	# Now we have retrieved all the informations. Building checkcommand...
-	$command_line = $command_def[$service_def["check_command"]];
+	$svcRealName = preg_replace('/\!.*$/', '', $service_def["check_command"]);
+	$svcArgs = preg_replace('/^[^!]+[!]?/', '', $service_def["check_command"]);
+
+	$args = array();
+	while (strlen($svcArgs) > 0) {
+		$args[] = preg_replace('/^([^!]+).*/', '${1}', $svcArgs);
+		$svcArgs = preg_replace('/^[^!]+[!]?/', '', $svcArgs);
+	}
+	//print_r($args);
+	
+	$command_line = $command_def[$svcRealName];
 	$command_fields = preg_split('/\s+/', $command_line, -1, PREG_SPLIT_NO_EMPTY);
+	//print_r($command_fields);
 
 	$command_nagios = "";
 	foreach ($command_fields as $v) {
@@ -89,7 +100,22 @@
 		} elseif ( preg_match('/\$USER1\$/', $v) ) { #Nagios variable, need to change with its value
 			$param = preg_replace('/\$USER1\$/', USER1, $v);
 			$command_nagios .= $param . " ";
-		} else { # Just copy
+		} elseif ( preg_match('/\$ARG[0-9]+\$/', $v) ) { # match $ARG1$, $ARG2$ etc
+      			$argNb = preg_replace('/\$ARG([0-9]+)\$/', '${1}', $v);
+      			$argRp = $args[$argNb-1];
+      			if (preg_match('/^\$_HOST.*$/', $argRp)) {
+      			  $param = preg_replace('/^\$_HOST(.*)$/', '${1}', $argRp);
+      			  $param = "_" . $param;
+      			  $param = preg_replace('/\s+$/', '', $param);
+      			  $argRp = $host_def[$param];
+      			} elseif (preg_match('/^\$_SERVICE.*$/', $argRp)) {
+      			  $param = preg_replace('/^$_SERVICE(.*)$/', '${1}', $argRp);
+        		  $param = "_" . $param;
+       			  $param = preg_replace('/\s+$/', '', $param);
+       			  $argRp = $service_def[$param];
+      			}
+      			$command_nagios .= $argRp . " ";
+   		 }else { # Just copy
 			$command_nagios .= $v . " ";
 		}	
 	}
